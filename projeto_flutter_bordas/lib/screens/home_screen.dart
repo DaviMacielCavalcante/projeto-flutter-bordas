@@ -13,16 +13,17 @@ class HomeScreen extends StatelessWidget {
           children: [
             const SizedBox(height: 80),
             const Text(
-              'Projeto Bordas',
+              'Detector de Bordas',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
+                fontSize: 28,
+                fontWeight: FontWeight.w300,
+                letterSpacing: 2,
               ),
             ),
             Expanded(
               child: Center(
-                child: ElevatedButton(
+                child: OutlinedButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (_) => CameraScreen()));
                   },

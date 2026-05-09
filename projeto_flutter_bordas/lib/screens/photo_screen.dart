@@ -67,15 +67,29 @@ class _PhotoScreenState extends State<PhotoScreen> {
     } else { 
     return Scaffold(                                                                                                                                        
         appBar: AppBar(title: const Text('Resultado')),                                                                                                       
-        body: SingleChildScrollView(                                                                                                                          
-          child: Column(                                                                                                                                      
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(vertical: 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text('Original'),
-              Image.file(File(widget.path)),
-              const Text('Tons de cinza'),
-              Image.memory(_grayImage!),
-              const Text('Bordas detectadas'),
-              Image.memory(_processedImage!),
+              const Padding(
+                padding: EdgeInsets.fromLTRB(24, 0, 24, 8),
+                child: Text('Original', style: TextStyle(color: Color(0xFFAAAAAA), fontSize: 12, letterSpacing: 1.5)),
+              ),
+              Image.file(File(widget.path), width: double.infinity, fit: BoxFit.cover),
+              const SizedBox(height: 32),
+              const Padding(
+                padding: EdgeInsets.fromLTRB(24, 0, 24, 8),
+                child: Text('Tons de cinza', style: TextStyle(color: Color(0xFFAAAAAA), fontSize: 12, letterSpacing: 1.5)),
+              ),
+              Image.memory(_grayImage!, width: double.infinity, fit: BoxFit.cover),
+              const SizedBox(height: 32),
+              const Padding(
+                padding: EdgeInsets.fromLTRB(24, 0, 24, 8),
+                child: Text('Bordas detectadas', style: TextStyle(color: Color(0xFFAAAAAA), fontSize: 12, letterSpacing: 1.5)),
+              ),
+              Image.memory(_processedImage!, width: double.infinity, fit: BoxFit.cover),
+              const SizedBox(height: 24),
             ],
           ),
         ),

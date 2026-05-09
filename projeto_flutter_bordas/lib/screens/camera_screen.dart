@@ -53,13 +53,13 @@ class _CameraScreenState extends State<CameraScreen> {
               left: 0,
               right: 0,
               child:  Center(
-                child: ElevatedButton(onPressed: () async {
+                child: OutlinedButton(onPressed: () async {
 
                   final photo_path = await _controller!.takePicture();
 
                   Navigator.push(context, MaterialPageRoute(builder: (_) => PhotoScreen(path: photo_path.path)));
 
-                }, child: const Text("Tirar foto")),
+                }, child: const Text("Tirar Foto")),
               ),
             )
           ],
