@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projet_flutter_bordas/screens/camera_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -22,7 +23,9 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               child: Center(
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) => CameraScreen()));
+                  },
                   child: const Text('Abrir Câmera'),
                 ),
               ),
